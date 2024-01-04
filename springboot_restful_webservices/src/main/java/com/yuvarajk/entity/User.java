@@ -1,12 +1,8 @@
 package com.yuvarajk.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.engine.internal.Cascade;
 
 @Entity
 @Data
@@ -21,7 +17,11 @@ public class User {
     @Column(nullable = false)
     private String lastname;
     @Column(nullable = false, unique = true)    
-    private String email; 
+    private String email;
+    private  String profilepicture;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "dept_id")
+    private Department department;
 
 
 }

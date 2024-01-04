@@ -2,6 +2,7 @@ package com.yuvarajk.service;
 
 import java.util.List;
 
+import com.yuvarajk.entity.Department;
 import com.yuvarajk.entity.User;
 
 public interface UserService {
@@ -17,6 +18,4 @@ public interface UserService {
 
     void deleteUser(Long userId);
 
-    List<User> getUserById();
-    
 }
